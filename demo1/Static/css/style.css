@@ -1,0 +1,10 @@
+/* spacing */
+
+table {
+	display: table;
+	height: 100px;
+	width: 100%;
+	table-layout: fixed;
+	
+}
+

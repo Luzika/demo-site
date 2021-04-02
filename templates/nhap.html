@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div calss="form-group">
+<form action="" method="POST" novalidate>
+	{% csrf_token %}
+
+	<div class="container">
+		<div class="row mb-2">
+			<div class="col">
+				{{ form.company|as_crispy_field}}
+			</div>
+
+			<div class="col">
+				{{ form.vessel|as_crispy_field}}
+			</div>
+
+			<div class="col">
+				{{ form.odr|as_crispy_field}}
+ 				 
+			</div>
+
+			<div class="col">
+				{{ form.docs|as_crispy_field}}
+			</div>
+		</div>
+
+
+		<div class="row mb-2">
+			<div class="col">
+				{{ form.supplier|as_crispy_field}}
+			</div>
+
+			<div class="col">
+				{{ form.qty|as_crispy_field}}
+			</div>
+
+			<div class="col">
+				{{ form.unit|as_crispy_field}}
+			</div>
+
+			<div class="col">
+				{{ form.size|as_crispy_field}}
+			</div>
+		</div>
+
+		<div class="row mb-2">
+			<div class="col">
+				{{ form.weight|as_crispy_field}}
+			</div>
+
+			<div class="col">
+				{{ form.in1|as_crispy_field}}
+			</div>
+
+			<div class="col">
+				{{ form.whouse|as_crispy_field}}
+			</div>
+
+			<div class="col">
+				{{ form.by1|as_crispy_field}}
+			</div>
+		</div>
+
+		<div class="row mb-2">
+			<div class="col">
+				{{ form.BLNO|as_crispy_field}}
+			</div>
+
+			<div class="col">
+				{{ form.port|as_crispy_field}}
+			</div>
+
+			<div class="col">
+				{{ form.outdate|as_crispy_field}}
+			</div>
+
+			<div class="col">
+				{{ form.REMARK|as_crispy_field}}
+			</div>
+		</div>
+
+		<div class="row mb-3">
+			<div class="col">
+				{{ form.division|as_crispy_field}}
+			</div>
+
+			<div class="col">
+				{{ form.jobnumber|as_crispy_field}}
+			</div>
+		</div>
+
+		<div class="row mb-3">
+			<div class="col">
+				<button type="submit" class="btn btn-success">Submit</button>
+			</div>
+
+			<div class="col">
+				{% if messages %}
+				{% for message in messages %}
+					<h4 style="color:green;">{{message}}</h2>
+				{% endfor %}
+				{% endif %}
+			</div>
+		</div>
+
+	</div>
+</form>
+</div>
+
+{% endblock %}

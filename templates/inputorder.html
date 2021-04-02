@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<br>
+	<div class="row">
+			<div clas="card card-body">
+				<table calss="table table-sm">
+					<form method ="POST" novalidate>
+						{% csrf_token %}
+						<div class="row">
+							<div class="col-6">
+							Company:<input type="text" placeholder="Enter Company Name" name="company">	
+							</div>
+							<div class="col-6">
+							Vessel:<input type="text" placeholder="Enter Vessel Name" name="vessel">
+							</div>
+							<div class="col-6">
+						Order:<input type="text" placeholder="Enter Order Number" name="odr">
+					</div>
+						<div class="col-6">
+							Supplier:<input type="text" placeholder="Enter Supplier Name"name="supplier">
+						</div>
+						Quantity:<input type="text" placeholder="Enter Quantity"name="qty">
+						Size:<input type="text" placeholder="Enter Size" name="size">
+						Weight:<input type="text" placeholder="Enter Weight" name="weight">
+						Date:<input type="text" placeholder="Enter Date" name="in1">
+						Wearhouse:<input type="text" placeholder="Enter Wearhouse Name" name="whouse">
+						Port:<input type="text" placeholder="Enter Port Name"name="port">
+						Division:<input type="text" placeholder="Enter Division" name = "division">
+						<input type="submit" value="Insert Record"/>
+						{% if messages %}
+						{% for message in messages %}
+							<h4 style="color:green;">{{message}}</h2>
+						{% endfor %}
+						{% endif %}
+					</form>
+	</div>
+	
+{% endblock %}
